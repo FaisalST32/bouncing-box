@@ -52,12 +52,11 @@ function render() {
         yDirChanged = true;
     }
 
-    if (!(jackpot) && (xDirChanged || yDirChanged)) {
-        color = `rgb(${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)})`;
-
-    } else if (xDirChanged && yDirChanged) {
+     if (xDirChanged && yDirChanged) {
         startJackpot()
-    }
+    } else if (!(jackpot) && (xDirChanged || yDirChanged)) {
+        color = `rgb(${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)}, ${Math.ceil(Math.random() * 255)})`;
+    } 
 
     clearRectangle(prevPosition);
     prevPosition = { ...currentPosition };
